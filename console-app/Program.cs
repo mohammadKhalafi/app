@@ -32,4 +32,4 @@ foreach (var data in dataOfFirstThreeStudents){
     Console.WriteLine(data.average);
 }
 
-
+Console.WriteLine("hoho");
