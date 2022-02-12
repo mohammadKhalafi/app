@@ -1,0 +1,12 @@
+F:\c#moh\app\library\bin\Debug\net6.0\library.deps.json
+F:\c#moh\app\library\bin\Debug\net6.0\library.dll
+F:\c#moh\app\library\bin\Debug\net6.0\ref\library.dll
+F:\c#moh\app\library\bin\Debug\net6.0\library.pdb
+F:\c#moh\app\library\obj\Debug\net6.0\library.csproj.AssemblyReference.cache
+F:\c#moh\app\library\obj\Debug\net6.0\library.GeneratedMSBuildEditorConfig.editorconfig
+F:\c#moh\app\library\obj\Debug\net6.0\library.AssemblyInfoInputs.cache
+F:\c#moh\app\library\obj\Debug\net6.0\library.AssemblyInfo.cs
+F:\c#moh\app\library\obj\Debug\net6.0\library.csproj.CoreCompileInputs.cache
+F:\c#moh\app\library\obj\Debug\net6.0\library.dll
+F:\c#moh\app\library\obj\Debug\net6.0\ref\library.dll
+F:\c#moh\app\library\obj\Debug\net6.0\library.pdb

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/rHgRh2vrwkDNqEeRAcyknqHwmjH1Iupy12A83i5J+eEoTGi1dL2AO9Ks7cBGv4Q5Tx6GtmdXca0DBYo/1crxA==",
+  "success": true,
+  "projectFilePath": "F:\\c#moh\\app\\console-app\\console-app.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Padidar\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
