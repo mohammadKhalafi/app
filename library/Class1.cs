@@ -1,12 +1,9 @@
 ﻿namespace library;
-using System.Text.Json;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 public class FileReader
 {
     public string path {set; get;}
     public string ReadFile() => System.IO.File.ReadAllText(path);
-    
 }
 
 public class Student
@@ -27,7 +24,6 @@ public static class Deserializer<T>
 {
     public static List<T> DeserializeArrayOfJsonObjects(string jsonString) => 
         JsonConvert.DeserializeObject<List<T>>(jsonString);
-    
 }
 
 public class Data{
