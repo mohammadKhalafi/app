@@ -41,14 +41,14 @@ public class controller{
 
     private List<Student> students;
     private List<Score> scores;
-    private Data[] dataOfFirstThreeStudents;
+    private Dictionary<int, Data> allData;
 
     public void Run(){
         InitializeScores();
         InitializeStudendts();
         InitializeData();
-        CalcuolateAverage();
-        PrintAnswer();
+        CalcuolateAverages();
+        PrintAnswer(getFirstThreeStudents());
     }
     private void InitializeStudendts(){
         var studentsFileReader = new FileReader() {path = @"../files/students.txt"};
@@ -64,34 +64,43 @@ public class controller{
     }
 
     private void InitializeData(){
-        var data = new Data[3];
-        for (int i = 0; i < 3; i++){
+        allData = new Dictionary<int, Data>();
+
+        foreach(var student in students){
             var eachData = new Data(){
-                firstName = students[i].firstName,
-                lastName = students[i].lastName,
-                studentNumber = students[i].studentNumber
+                firstName = student.firstName,
+                lastName = student.lastName,
+                studentNumber = student.studentNumber
             };
-            data[i] = eachData;
+            allData.Add(student.studentNumber, eachData);
         }
-        dataOfFirstThreeStudents = data;
     }
 
-    private void CalcuolateAverage(){
+    private void CalcuolateAverages(){
         foreach (var score in scores){
-            foreach(var eachData in dataOfFirstThreeStudents){
-                if (score.studentNumber == eachData.studentNumber){
-                    eachData.AddScore(score.score);
-                    break;
-                }
-            }
+            var eachData = allData[score.studentNumber];
+            eachData.AddScore(score.score);
         }
     }
 
-    private void PrintAnswer(){
-        foreach (var eachData in dataOfFirstThreeStudents){
+    private List<Data> getFirstThreeStudents(){
+
+        var data = allData.Values.ToList();
+        data.Sort(new GFG());
+        return data.GetRange(0,3);
+    }
+
+    private void PrintAnswer(List<Data>data){
+        foreach (var eachData in data){
             Console.WriteLine(eachData.firstName + " " +
                 eachData.lastName + " : " + eachData.average);
         }
     }
 }
 
+class GFG : IComparer<Data>{
+    public int Compare(Data x, Data y)
+    {
+        return x.average - y.average >= 0 ? -1 : 1;
+    }
+}
